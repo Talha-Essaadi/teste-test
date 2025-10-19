@@ -34,23 +34,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	printf("str : %s\n", ft_substr("0123456789", 4, 5));
-	if (ft_strncmp(ft_substr("0123456789", 5, 10), "56789", 5) != 0
-		|| ft_strncmp(ft_substr("0123456789", 0, 10), "0123456789", 10) != 0
-		|| ft_strncmp(ft_substr("0123456789", 9, 10), "9", 1) != 0
-		|| ft_strncmp(ft_substr("0123456789", 9, 1), "9", 1) != 0
-		|| ft_strncmp(ft_substr("0123456789", 9, 0), "", 1) != 0)
-	{
-		printf("Error in ft_substr Function ❌\n");
-	}
-	else
-	{
-		printf("ft_substr Function is Correct ✅\n");
-	}
-}

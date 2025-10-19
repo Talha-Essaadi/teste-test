@@ -25,19 +25,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	if (ft_strlen("0123456789") != strlen("0123456789")
-		|| ft_strlen("A") != strlen("A") || ft_strlen("") != strlen(""))
-	{
-		printf("Error in ft_strlen Function ❌\n");
-	}
-	else
-	{
-		printf("ft_strlen Function is Correct ✅\n");
-	}
-}

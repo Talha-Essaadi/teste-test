@@ -27,30 +27,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (s1[i] - s2[i]);
 }
-
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	printf("firt is '1' second is empty n = 10 : %d _ %d\n", strncmp("", "Z",
-			10), ft_strncmp("", "Z", 10));
-	if (ft_strncmp("0123456789", "0123456789", 10) != strncmp("0123456789",
-			"0123456789", 10) || ft_strncmp("0123456789", "0123456789",
-			11) != strncmp("0123456789", "0123456789", 11)
-		|| ft_strncmp("0123456789", "0123456789", 9) != strncmp("0123456789",
-			"0123456789", 9) || ft_strncmp("0123456789", "0123456789",
-			15) != strncmp("0123456789", "0123456789", 15)
-		|| ft_strncmp("012345672", "012345671", 9) != strncmp("012345672",
-			"012345671", 9) || ft_strncmp("012345672", "012345673",
-			9) != strncmp("012345672", "012345673", 9)
-		|| ft_strncmp("0123456789", "0123456789", 0) != strncmp("0123456789",
-			"0123456789", 0) || ft_strncmp("", "", 10) != strncmp("", "", 10))
-	{
-		printf("Error in ft_strncmp Function ❌\n");
-	}
-	else
-	{
-		printf("ft_strncmp Function is Correct ✅\n");
-	}
-}
