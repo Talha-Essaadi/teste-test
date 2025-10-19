@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:42:28 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/16 17:35:27 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 17:53:50 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_atoi(const char *nptr)
 	int	sign;
 	int	number;
 
+	if (nptr == NULL)
+		return (0);
 	i = 0;
 	sign = 1;
 	number = 0;

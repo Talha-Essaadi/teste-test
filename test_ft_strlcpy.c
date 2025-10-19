@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:22:35 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/18 23:47:12 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:21:07 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	src_length;
 
+	if (dst  == NULL || src == NULL)
+		return (0);
 	src_length = ft_strlen(src);
 	if (size == 0)
 		return (src_length);
@@ -38,14 +40,15 @@ int	main()
 	int	len;
 
 	str = (char *)malloc(20);
-	len = ft_strlcpy(str, (const char *)"123456789", 4);
+	len = ft_strlcpy(str, (const char *)"12345678901234567890", 20);
 	printf("len : %d\n", len);
-	if (str[9] != '\0' || len != 9
-			|| ft_strlcpy(str, (const char *)"123456789", 4) != 9 
+	//char *s = "abcdef";
+	//char *e = ;
+	//if(ft_strlcpy(s, ))
+	if (ft_strlcpy(str, (const char *)"123456789", 20) != 9 || str[9] != '\0'
+			|| ft_strlcpy(str, (const char *)"12345678901234567890", 20) != 20 || str[19] != '\0'
 			|| ft_strlcpy(str, (const char *)"", 20) != 0
-			|| ft_strlcpy(str, (const char *)"1", 20) != 1
-			|| ft_strlcpy(str, (const char *)"12345678901234567890", 20)
-			!= 20|| str[20] != '\0')
+			|| ft_strlcpy(str, (const char *)"1", 20) != 1 || str[1] != '\0')
 	{
 		printf("Error in ft_strlcpy Function ❌\n");
 	}

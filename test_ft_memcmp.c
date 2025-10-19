@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 22:13:59 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/16 22:05:20 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:04:32 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*str1;
 	unsigned char	*str2;
 
+	if (s1 == NULL || s2 == NULL)
+		return (0);
 	i = 0;
 	if (n == 0)
 		return (0);

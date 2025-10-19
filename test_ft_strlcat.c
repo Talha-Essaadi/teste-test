@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:31:11 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/18 23:47:49 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:18:06 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dest_length;
 	size_t	i;
 
+	if (dst == NULL | src == NULL)
+		return (0);
 	src_length = ft_strlen(src);
 	dest_length = ft_strlen(dst);
 	i = 0;

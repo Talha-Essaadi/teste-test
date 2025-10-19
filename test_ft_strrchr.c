@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 22:31:09 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/18 23:48:57 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:25:49 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	letter;
 	char	*str;
 
+	if (s == NULL)
+		return (NULL);
 	i = ft_strlen(s);
 	letter = (char)c;
 	str = (char *)s;

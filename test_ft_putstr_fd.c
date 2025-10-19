@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:38:19 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/19 00:07:45 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:14:14 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (s == NULL || fd == -1)
+		return ;
 	i = 0;
 	while (s[i])
 	{

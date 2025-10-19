@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:02:04 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/19 00:16:46 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:15:23 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ char	**ft_split(char const *s, char c)
 {
 	t_vars	var;
 
+	if (s == NULL)
+		return (NULL);
 	var.words = ft_count_words(s, c);
 	var.strs = (char **)malloc(sizeof(char *) * (var.words + 1));
 	if (var.strs == NULL)

@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 22:00:30 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/18 23:52:57 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:10:54 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char	letter;
 	unsigned char	*str;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	// check if c between 0 and 255 
 	// check if can c be negative and represented as unsigned char ?
@@ -52,8 +54,8 @@ int	main()
 	b.c = 'Z';
 	s1 = ft_strdup("123456789");
 	s2 = ft_strdup("123456789");
-	ft_memset((void *)s1,255 , 9);
-	memset((void *)s2,255 , 9);
+	ft_memset((void *)s1,82345 , 9);
+	memset((void *)s2,82345 , 9);
 	ft_memset((void *)&a, 0, sizeof(t_node));
 	memset((void *)&b, 0, sizeof(t_node));
 	printf("s1 : %s\n", s1);

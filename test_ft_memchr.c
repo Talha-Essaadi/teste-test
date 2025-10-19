@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 22:36:45 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/18 23:53:28 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:03:27 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	letter;
 	unsigned char	*str;
 
+	if (s == NULL)
+		return (NULL);
 	letter = (unsigned char)c;
 	str = (unsigned char *)s;
 	i = 0;

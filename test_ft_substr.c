@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 10:53:22 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/17 19:12:43 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:26:44 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	j;
 	char	*str;
 
+	if (s == NULL)
+		return (NULL);
 	str = (char *)malloc(len + 1);
 	i = (size_t)start;
 	if (str == NULL)

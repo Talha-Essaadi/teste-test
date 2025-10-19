@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 19:58:10 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/17 18:22:29 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:25:07 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	k;
 	char	*str;
 
+	if (big == NULL || little == NULL)
+		return (NULL);
 	i = 0;
 	str = (char *)big;
 	if (little[0] == '\0')

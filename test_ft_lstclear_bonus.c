@@ -6,11 +6,12 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 23:47:55 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/18 19:05:13 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 17:43:51 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
@@ -24,8 +25,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (acc != NULL)
 	{
 		prev = acc->next;
-		free(acc->content);
-		free((void *)acc);
+		ft_lstdelone(acc, del);
 		acc = prev;
 	}
 	*lst = NULL;

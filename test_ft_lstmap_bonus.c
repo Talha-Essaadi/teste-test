@@ -6,11 +6,12 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 09:35:59 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/18 18:33:08 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:36:15 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -30,6 +31,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&head, del);
 			return (NULL);
 		}
+		printf("map_node : %p\n", node);
 		node->next = acc->next;
 		ft_lstadd_back(&head, node);
 		acc = acc->next;

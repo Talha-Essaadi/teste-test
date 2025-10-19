@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 19:49:33 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/16 16:12:53 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:24:02 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	if (s1 == NULL || s2 == NULL)
+		return (0);
 	i = 0;
 	if (n == 0)
 		return (0);

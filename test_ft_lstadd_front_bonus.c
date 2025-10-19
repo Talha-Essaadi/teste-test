@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 23:32:21 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/19 00:53:19 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:40:00 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_add_lst_front(char *s , t_list **head)
 	node = (t_list *)malloc(sizeof(t_list));
 	if (!node)
 		return ;
+	printf("f_node : %p\n", node);
 	node->content = (void *)s;
 	node->next = NULL;
 	printf("here 2\n");
@@ -55,6 +56,7 @@ void    ft_add_lst_back(char *s , t_list **head)
         node = (t_list *)malloc(sizeof(t_list));
         if (!node)
                 return ;
+	printf("b_node : %p\n", node);
         node->content = (void *)s;
         node->next = NULL;
         printf("here 2\n");
@@ -144,7 +146,18 @@ int	main()
 	ft_display_lst(head2);
 
 	printf("\n\nft_lstclear : \n");
+	t_list *acc;
+	acc = head;
+	t_list	*prev;
+	while (acc != NULL)
+	{
+		prev = acc->next;
+		printf("head1_node : %p\n", acc);
+		free(acc);
+		acc = prev;
+	}
 	ft_lstclear(&head2,ft_del);
+	//ft_lstclear(&head,ft_del);
 	//printf("\n\nft_lstclear : %s\n", (char *)head2);
 	/*
 	if (ft_strncmp((char *)ft_lstnew((void *)"123456789")->content , "123456789", 10) != 0
@@ -160,4 +173,17 @@ int	main()
 		printf("ft_lstadd_front Function is Correct ✅\n");
 	}
 	*/
+	printf("s1 : %p\n", s1);
+	printf("s1 : %p\n", s2);
+	printf("s1 : %p\n", s3);
+	printf("s1 : %p\n", s4);
+	printf("s1 : %p\n", s5);
+	printf("s1 : %p\n", s6);
+	/*
+	free(s1);
+	free(s2);
+	free(s3);
+	free(s4);
+	free(s5);
+	free(s6);*/
 }
