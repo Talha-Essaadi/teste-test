@@ -148,4 +148,4 @@ cc -Wall -Wextra -Werror  test_ft_lstnew_bonus.c ft_strncmp.c  && ./a.out
 cc -Wall -Wextra -Werror -fsanitize=address -g3  -fsanitize=address -g3 -g  test_ft_lstadd_front_bonus.c test_ft_lstadd_back_bonus.c test_ft_lstsize_bonus.c ft_strlcat.c ft_strlen.c test_ft_lstlast_bonus.c  ft_strdup.c test_ft_lstiter_bonus.c test_ft_lstmap_bonus.c test_ft_lstclear_bonus.c  ft_lstnew_bonus.c  test_ft_lstdelone_bonus.c &&  ./a.out
 
 rm -rf tmp
-
+rm -rf tmp1 a.out 
