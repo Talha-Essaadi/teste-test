@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   test_ft_strlen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:19:13 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/13 18:22:00 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:22:05 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,28 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
+	if (s == NULL)
+		return (0);
 	i = 0;
 	while (s[i])
 	{
 		i++;
 	}
 	return (i);
+}
+
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	if (ft_strlen("0123456789") != strlen("0123456789")
+		|| ft_strlen("A") != strlen("A") || ft_strlen("") != strlen(""))
+	{
+		printf("Error in ft_strlen Function ❌\n");
+	}
+	else
+	{
+		printf("ft_strlen Function is Correct ✅\n");
+	}
 }

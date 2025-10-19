@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   test_ft_strdup.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:17:26 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/15 11:23:17 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:16:26 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strdup(const char *s)
 	if (s == NULL)
 		return (NULL);
 	str = (char *)malloc(ft_strlen(s) + 1);
+	if (str == NULL)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
@@ -28,4 +30,24 @@ char	*ft_strdup(const char *s)
 	}
 	str[i] = '\0';
 	return (str);
+}
+
+#include <ctype.h>
+#include <stdio.h>
+
+int	main(void)
+{
+	if (ft_strncmp((const char *)ft_strdup("123456789"),
+			(const char *)"123456789", 9) != 0
+		|| ft_strncmp((const char *)ft_strdup("123456789"),
+			(const char *)"123456789", 10) != 0
+		|| ft_strncmp((const char *)ft_strdup(""), (const char *)"", 10) != 0
+		|| ft_strncmp((const char *)ft_strdup("1"), (const char *)"1", 1) != 0)
+	{
+		printf("Error in ft_strdup Function ❌\n");
+	}
+	else
+	{
+		printf("ft_strdup Function is Correct ✅\n");
+	}
 }
