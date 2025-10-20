@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 21:36:17 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/16 09:40:37 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 22:30:20 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ typedef struct s_vars
 	const char		*start;
 	const char		*end;
 	char			**strs;
+	int				k;
+	int				len;
+	unsigned char	*s1;
+	unsigned char	*s2;
+
 	t_list			*acc;
 	t_list			*acc2;
 	t_list			*head;

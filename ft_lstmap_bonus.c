@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 09:35:59 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/19 19:08:36 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 22:07:51 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&head, del);
 			return (NULL);
 		}
-		printf("map_node : %p\n", node);
 		node->next = acc->next;
 		ft_lstadd_back(&head, node);
 		acc = acc->next;

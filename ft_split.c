@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:02:04 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/19 19:01:29 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 22:29:12 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,31 @@ static int	ft_count_words(char const *s, char c)
 	return (words);
 }
 
+static int	ft_split_logic_2(char const *s, char c, t_vars *ptr)
+{
+	if (s[ptr->i])
+	{
+		ptr->start = &s[ptr->i];
+		while (s[ptr->i] && s[ptr->i] != c)
+			ptr->i++;
+		ptr->end = &s[ptr->i];
+		ptr->strs[ptr->j] = (char *)malloc(ptr->end - ptr->start + 1);
+		if (ptr->strs[ptr->j] == NULL)
+		{
+			ptr->i = 0;
+			while (ptr->i < ptr->j)
+			{
+				free(ptr->strs[ptr->i]);
+				ptr->i++;
+			}
+			return (-1);
+		}
+		ft_strlcpy(ptr->strs[ptr->j], ptr->start, ptr->end - ptr->start + 1);
+		ptr->j++;
+	}
+	return (1);
+}
+
 static int	ft_split_logic(char const *s, char c, t_vars *ptr)
 {
 	int	i;
@@ -41,27 +66,8 @@ static int	ft_split_logic(char const *s, char c, t_vars *ptr)
 	{
 		while (s[ptr->i] && s[ptr->i] == c)
 			ptr->i++;
-		if (s[ptr->i])
-		{
-			ptr->start = &s[ptr->i];
-			while (s[ptr->i] && s[ptr->i] != c)
-				ptr->i++;
-			ptr->end = &s[ptr->i];
-			ptr->strs[ptr->j] = (char *)malloc(ptr->end - ptr->start + 1);
-			if (ptr->strs[ptr->j] == NULL)
-			{
-				i = 0;
-				while (i < ptr->j)
-				{
-					free(ptr->strs[i]);
-					i++;
-				}
-				return (-1);
-			}
-			ft_strlcpy(ptr->strs[ptr->j], ptr->start, ptr->end - ptr->start
-				+ 1);
-			ptr->j++;
-		}
+		if (ft_split_logic_2(s, c, ptr) == -1)
+			return (-1);
 	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: tessaadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 19:14:44 by tessaadi          #+#    #+#             */
-/*   Updated: 2025/10/19 19:10:00 by tessaadi         ###   ########.fr       */
+/*   Updated: 2025/10/19 21:43:55 by tessaadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,32 +28,29 @@ static int	ft_contain(char const c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		len;
-	char	*str;
+	t_vars	var;
 
 	if (s1 == NULL)
 		return (NULL);
 	if (s1[0] == '\0' || set == NULL || set[0] == '\0')
 		return (ft_strdup(s1));
-	len = ft_strlen(s1);
-	len--;
-	while (len >= 0 && ft_contain(s1[len], set) == 1)
-		len--;
-	i = 0;
-	len++;
-	while (s1[i] && ft_contain(s1[i], set) == 1)
-		i++;
-	str = (char *)malloc(len - i + 1);
-	if (str == NULL)
+	var.len = ft_strlen(s1);
+	var.len--;
+	while (var.len >= 0 && ft_contain(s1[var.len], set) == 1)
+		var.len--;
+	var.k = 0;
+	var.len++;
+	while (s1[var.k] && ft_contain(s1[var.k], set) == 1)
+		var.k++;
+	var.str = (char *)malloc(var.len - var.k + 1);
+	if (var.str == NULL)
 		return (NULL);
-	j = 0;
-	while (i < len)
+	var.j = 0;
+	while (var.k < var.len)
 	{
-		str[j] = s1[i];
-		j++;
-		i++;
+		var.str[var.j] = s1[var.k];
+		var.j++;
+		var.k++;
 	}
-	return (str);
+	return (var.str);
 }
